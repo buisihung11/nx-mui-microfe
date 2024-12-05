@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Dashboard from './Dashboard';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const StyledApp = styled.div`
   // Your style here
@@ -8,7 +9,9 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <Dashboard />
+      <Router>
+        <Dashboard />
+      </Router>
     </StyledApp>
   );
 }

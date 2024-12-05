@@ -18,6 +18,13 @@ import {
   datePickersCustomizations,
   treeViewCustomizations,
 } from '@mui_reactts/theme/customizations';
+import { Routes, Route } from 'react-router-dom';
+import Analytics from './Analytics';
+import Clients from './Clients';
+import Tasks from '@mui_reactts/app/Tasks';
+import Settings from '@mui_reactts/app/Settings';
+import About from '@mui_reactts/app/About';
+import Feedback from '@mui_reactts/app/Feedback';
 
 const xThemeComponents = {
   ...chartsCustomizations,
@@ -52,7 +59,16 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
             }}
           >
             <Header />
-            <MainGrid />
+            <Routes>
+              <Route path="/mui-reactts" element={<MainGrid />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/clients" element={<Clients />} />
+              <Route path="/tasks" element={<Tasks />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/feedback" element={<Feedback />} />
+              {/* Add more routes here */}
+            </Routes>
           </Stack>
         </Box>
       </Box>

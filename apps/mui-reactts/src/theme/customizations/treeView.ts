@@ -6,7 +6,7 @@ import { gray, brand } from '@mui_reactts/theme/shared-theme/themePrimitives';
 export const treeViewCustomizations: TreeViewComponents<Theme> = {
   MuiTreeItem2: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: { theme: Theme }) => ({
         position: 'relative',
         boxSizing: 'border-box',
         padding: theme.spacing(0, 1),
@@ -26,7 +26,7 @@ export const treeViewCustomizations: TreeViewComponents<Theme> = {
           },
         },
       }),
-      content: ({ theme }) => ({
+      content: ({ theme }: { theme: Theme }) => ({
         marginTop: theme.spacing(1),
         padding: theme.spacing(0.5, 1),
         overflow: 'clip',

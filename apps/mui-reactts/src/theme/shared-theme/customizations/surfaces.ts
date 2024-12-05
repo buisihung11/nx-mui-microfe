@@ -9,7 +9,7 @@ export const surfacesCustomizations: Components<Theme> = {
       disableGutters: true,
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: { theme: Theme }) => ({
         padding: 4,
         overflow: 'clip',
         backgroundColor: (theme.vars || theme).palette.background.default,
@@ -34,7 +34,7 @@ export const surfacesCustomizations: Components<Theme> = {
   },
   MuiAccordionSummary: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: { theme: Theme }) => ({
         border: 'none',
         borderRadius: 8,
         '&:hover': { backgroundColor: gray[50] },
@@ -57,14 +57,14 @@ export const surfacesCustomizations: Components<Theme> = {
   },
   MuiCard: {
     styleOverrides: {
-      root: ({ theme }) => {
+      root: ({ theme }: { theme: Theme }) => {
         return {
           padding: 16,
           gap: 16,
           transition: 'all 100ms ease',
           backgroundColor: gray[50],
           borderRadius: (theme.vars || theme).shape.borderRadius,
-          border: `1px solid ${(theme.vars || theme).palette.divider}`,
+          border: `1px solid ${theme.palette.divider}`,
           boxShadow: 'none',
           ...theme.applyStyles('dark', {
             backgroundColor: gray[800],
