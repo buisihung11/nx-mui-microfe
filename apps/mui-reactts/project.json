@@ -1,0 +1,95 @@
+{
+  "name": "mui_reactts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mui-reactts/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/mui-reactts",
+        "index": "apps/mui-reactts/src/index.html",
+        "baseHref": "/",
+        "main": "apps/mui-reactts/src/main.ts",
+        "tsConfig": "apps/mui-reactts/tsconfig.app.json",
+        "assets": [
+          "apps/mui-reactts/src/favicon.ico",
+          "apps/mui-reactts/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "apps/mui-reactts/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/mui-reactts/src/environments/environment.ts",
+              "with": "apps/mui-reactts/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/mui-reactts/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mui_reactts:build",
+        "hmr": true,
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mui_reactts:build:development"
+        },
+        "production": {
+          "buildTarget": "mui_reactts:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "executor": "@nx/react:module-federation-static-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "serveTarget": "mui_reactts:serve"
+      },
+      "configurations": {
+        "development": {
+          "serveTarget": "mui_reactts:serve:development"
+        },
+        "production": {
+          "serveTarget": "mui_reactts:serve:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/mui-reactts/jest.config.ts"
+      }
+    }
+  }
+}

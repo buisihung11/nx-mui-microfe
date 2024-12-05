@@ -1,0 +1,29 @@
+{
+  "name": "mui_reactts-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/mui-reactts-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["mui_reactts"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/mui-reactts-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "mui_reactts:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "mui_reactts:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "mui_reactts:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
