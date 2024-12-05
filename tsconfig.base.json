@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "mui_reactts/Module": ["apps/mui-reactts/src/remote-entry.ts"],
-      "@mui_reactts/*": ["apps/mui-reactts/src/*"]
+      "@mui_reactts/*": ["apps/mui-reactts/src/*"],
+      "@myorg/design-system/*": ["libs/design-system/src/lib/*"],
+      "mui_reactts/Module": ["apps/mui-reactts/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

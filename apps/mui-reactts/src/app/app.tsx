@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-import Dashboard from './Dashboard';
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import MainGrid from '@myorg/design-system/components/MainGrid';
 const StyledApp = styled.div`
   // Your style here
 `;
@@ -9,9 +7,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <Router>
-        <Dashboard />
-      </Router>
+      <MainGrid />
     </StyledApp>
   );
 }

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
 import type {} from '@mui/x-charts/themeAugmentation';
 import type {} from '@mui/x-data-grid/themeAugmentation';
@@ -7,17 +6,18 @@ import { alpha } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import AppNavbar from '@mui_reactts/components/AppNavbar';
-import Header from '@mui_reactts/components/Header';
-import MainGrid from '@mui_reactts/components/MainGrid';
-import SideMenu from '@mui_reactts/components/SideMenu';
-import AppTheme from '@mui_reactts/theme/shared-theme/AppTheme';
+import Header from '@myorg/design-system/components/Header';
+import SideMenu from '@myorg/design-system/components/SideMenu';
+import AppNavbar from '@myorg/design-system/components/AppNavbar';
+import MainGrid from '@myorg/design-system/components/MainGrid';
+import AppTheme from '@myorg/design-system/theme/shared-theme/AppTheme';
+
 import {
   chartsCustomizations,
   dataGridCustomizations,
   datePickersCustomizations,
   treeViewCustomizations,
-} from '@mui_reactts/theme/customizations';
+} from '@myorg/design-system/theme/customizations';
 import { Routes, Route } from 'react-router-dom';
 import Analytics from './Analytics';
 import Clients from './Clients';
@@ -59,7 +59,7 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
             }}
           >
             <Header />
-            <Routes>
+            <Route path="/mui-reacts">
               <Route path="/mui-reactts" element={<MainGrid />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/clients" element={<Clients />} />
@@ -68,7 +68,7 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
               <Route path="/about" element={<About />} />
               <Route path="/feedback" element={<Feedback />} />
               {/* Add more routes here */}
-            </Routes>
+            </Route>
           </Stack>
         </Box>
       </Box>
