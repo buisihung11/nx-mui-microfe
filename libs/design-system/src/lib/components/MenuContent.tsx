@@ -15,10 +15,10 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 import { Link } from 'react-router-dom';
 
 const mainListItems = [
-  { text: 'Home', icon: <HomeRoundedIcon />, path: '/mui-reactts' },
-  { text: 'Analytics', icon: <AnalyticsRoundedIcon />, path: '/analytics' },
-  { text: 'Clients', icon: <PeopleRoundedIcon />, path: '/clients' },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon />, path: '/tasks' },
+  { text: 'Home', icon: <HomeRoundedIcon />, path: 'mui-reactts' },
+  { text: 'Analytics', icon: <AnalyticsRoundedIcon />, path: 'analytics' },
+  { text: 'Clients', icon: <PeopleRoundedIcon />, path: 'clients' },
+  { text: 'Tasks', icon: <AssignmentRoundedIcon />, path: 'tasks' },
 ];
 
 const secondaryListItems = [
