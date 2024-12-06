@@ -12,7 +12,8 @@ import App from './app/app';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
+
+export const BootStrap = () => (
   <StrictMode>
     {/* Basename will help us when we run app indepdently so that it wont break current path */}
     <BrowserRouter basename="admin/mui-reactts">
@@ -20,3 +21,5 @@ root.render(
     </BrowserRouter>
   </StrictMode>
 );
+
+root.render(<BootStrap />);
