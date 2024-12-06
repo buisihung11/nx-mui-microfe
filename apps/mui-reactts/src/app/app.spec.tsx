@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 
-import { BootStrap } from '../bootstrap';
 import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 
