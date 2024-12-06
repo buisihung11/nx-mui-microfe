@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "dotnet_function_template": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7189",
+      "launchBrowser": false
+    }
+  }
+}
